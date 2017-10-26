@@ -17,13 +17,18 @@
   Code Example
 </h3>
 <pre id='vimCodeElement'>
-<span class="PreProc">@IBDesignable</span>
+<span class="PreProc" style="color: red;">@IBDesignable</span>
 <span class="Keyword">final</span> <span class="Keyword">class</span> CustomLabel: <span class="Type">UILabel</span> {
 
-    <span class="PreProc">@IBInspectable</span> <span class="Keyword">var</span> foo <span class="Operator">=</span> <span class="Number">0.0</span>
-
+    <span class="PreProc" style="color: red;">@IBInspectable</span> <span class="Keyword">var</span> foo <span class="Operator">=</span> <span class="Number">0.0</span>
+    <span style="color: red;">
+    <span class="Comment">// Override this method to update the view while on IB</span>
+    <span class="Keyword">override</span> <span class="Keyword">func</span> prepareForInterfaceBuilder() {
+        <span class="Keyword">super</span>.<span class="Function">prepareForInterfaceBuilder</span>()
+    }
+    </span>
     <span class="Comment">// </span><span class="Comment">MARK</span><span class="Comment">: - Initializers</span>
-
+    <span style="color: blue;">
     <span class="Keyword">required</span> <span class="Keyword">convenience</span> <span class="Keyword">init</span>?(coder aDecoder: <span class="Type">NSCoder</span>) {
         <span class="Keyword">self</span>.<span class="Keyword">init</span>(aDecoder)
     }
@@ -34,11 +39,6 @@
         <span class="Keyword">self</span>.<span class="Keyword">init</span>(frame)
     }
 
-    <span class="Comment">// Override this method to update the view while on IB</span>
-    <span class="Keyword">override</span> <span class="Keyword">func</span> prepareForInterfaceBuilder() {
-        <span class="Keyword">super</span>.<span class="Function">prepareForInterfaceBuilder</span>()
-    }
-
     <span class="Comment">// The designated initializer; Use this whenever you need to test too!</span>
     <span class="Keyword">init</span>(_ aDecoder: <span class="Type">NSCoder</span>? <span class="Operator">=</span> <span class="Keyword">nil</span>, _ frame: <span class="Type">CGRect</span> <span class="Operator">=</span> <span class="Type">CGRect</span>.<span class="Identifier">zero</span>) {
         <span class="Keyword">if</span> <span class="Keyword">let</span> aDecoder <span class="Operator">=</span> aDecoder {
@@ -47,6 +47,7 @@
             <span class="Keyword">super</span>.<span class="Keyword">init</span>(frame: frame)
         }
     }
+    </span>
 }
 </pre>
 
