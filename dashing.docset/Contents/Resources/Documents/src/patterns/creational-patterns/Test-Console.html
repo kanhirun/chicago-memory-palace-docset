@@ -1,0 +1,34 @@
+<html><head></head><body><a class="dashingAutolink" name="autolink-12"></a><a class="dashAnchor" name="//apple_ref/cpp/Word/Test%20Console%20Pattern"></a><h1>
+  Test Console Pattern
+</h1>
+<a class="dashingAutolink" name="autolink-9"></a><a class="dashAnchor" name="//apple_ref/cpp/Error/Installing"></a><h2>Installing</h2>
+<pre id="vimCodeElement">```
+npm install sfarthin/intercept-stdout
+```
+</pre>
+<a class="dashingAutolink" name="autolink-10"></a><a class="dashAnchor" name="//apple_ref/cpp/Error/Code%20Example"></a><h2>Code Example</h2>
+<pre id="vimCodeElement"><span class="String">```</span>
+<span class="String">const intercept = require(&#39;intercept-stdout&#39;);  // captures stdout</span>
+
+<span class="String">const printSumOfInversions = require(&#34;../src/printSumOfInversions.js&#34;).printSumOfInversions;</span>
+
+<span class="String">describe(&#34;printSumOfInversions&#34;, () =&gt; {</span>
+<span class="String">  it(&#34;prints Hello world!&#34;, () =&gt; {</span>
+<span class="String">    var output = &#34;&#34;;</span>
+<span class="String">    const unhookIntercept = intercept( text =&gt; {</span>
+<span class="String">      output += text;</span>
+<span class="String">    });</span>
+
+<span class="String">    printSumOfInversions();</span>
+
+<span class="String">    unhookIntercept();</span>
+<span class="String">    expect(output).toEqual(&#34;Hello world!&#34;);</span>
+<span class="String">  })</span>
+<span class="String">});</span>
+<span class="String">```</span>
+</pre>
+<a class="dashingAutolink" name="autolink-11"></a><a class="dashAnchor" name="//apple_ref/cpp/Error/Read%20more%3A"></a><h2>
+  Read more:
+</h2>
+<a href="https://github.com/sfarthin/intercept-stdout">https://github.com/sfarthin/intercept-stdout</a>
+</body></html>

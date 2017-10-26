@@ -1,0 +1,10 @@
+{
+    "name": "Chicago Memory Palace",
+    "package": "dashing",
+    "index": "src/index.html",
+    "selectors": {
+      "h1": "Word",
+      "h2": "Error"
+    },
+    "allowJS": true
+}

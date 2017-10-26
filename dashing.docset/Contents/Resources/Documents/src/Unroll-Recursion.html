@@ -1,0 +1,29 @@
+<html><head></head><body><a class="dashingAutolink" name="autolink-8"></a><a class="dashAnchor" name="//apple_ref/cpp/Word/Unroll%20Recursion"></a><h1>Unroll Recursion</h1>
+<p>You have a recursive procedure that you wish to express iteratively.</p>
+<img src="../assets/img/unroll-recursion.jpg" height="250"/>
+<a class="dashingAutolink" name="autolink-9"></a><a class="dashAnchor" name="//apple_ref/cpp/Error/Mechanics"></a><h2>Mechanics</h2>
+<ol>
+  <li>
+    Replace the conditionals in the base case with an `until` loop (red)
+  </li>
+  <li>
+    If that&#39;s absent, use a `while` loop but with all the conditions inversed.
+  </li>
+  <li>
+    Underneath the while conditions, move the recursive statements there
+  </li>
+  <li>
+    Replace the recursive statements with variable assignment
+  </li>
+  <li>
+    Finally, move the base case return to the very bottom
+  </li>
+</ol>
+<a class="dashingAutolink" name="autolink-10"></a><a class="dashAnchor" name="//apple_ref/cpp/Error/Related"></a><h2>Related</h2>
+<div>
+  <a href="./Decompose-Conditional.html">Decompose Conditional</a>
+</div>
+<div>
+  <a href="./Make-Recursion.html">Make Recursion</a>
+</div>
+</body></html>

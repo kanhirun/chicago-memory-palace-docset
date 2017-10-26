@@ -1,0 +1,35 @@
+<h1>
+  Test Console Pattern
+</h1>
+<h2>Installing</h2>
+<pre id='vimCodeElement'>
+```
+npm install sfarthin/intercept-stdout
+```
+</pre>
+<h2>Code Example</h2>
+<pre id='vimCodeElement'>
+<span class="String">```</span>
+<span class="String">const intercept = require('intercept-stdout');  // captures stdout</span>
+
+<span class="String">const printSumOfInversions = require(&quot;../src/printSumOfInversions.js&quot;).printSumOfInversions;</span>
+
+<span class="String">describe(&quot;printSumOfInversions&quot;, () =&gt; {</span>
+<span class="String">  it(&quot;prints Hello world!&quot;, () =&gt; {</span>
+<span class="String">    var output = &quot;&quot;;</span>
+<span class="String">    const unhookIntercept = intercept( text =&gt; {</span>
+<span class="String">      output += text;</span>
+<span class="String">    });</span>
+
+<span class="String">    printSumOfInversions();</span>
+
+<span class="String">    unhookIntercept();</span>
+<span class="String">    expect(output).toEqual(&quot;Hello world!&quot;);</span>
+<span class="String">  })</span>
+<span class="String">});</span>
+<span class="String">```</span>
+</pre>
+<h2>
+  Read more:
+</h2>
+<a href="https://github.com/sfarthin/intercept-stdout">https://github.com/sfarthin/intercept-stdout</a>
